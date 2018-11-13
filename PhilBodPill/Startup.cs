@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using PhilBodPill.Data;
 
 namespace PhilBodPill
 {
@@ -24,7 +26,7 @@ namespace PhilBodPill
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AsyncInnDbContext>(options =>
+            services.AddDbContext<PhilBodPillDbContext>(options =>
             options.UseSqlServer(Configuration["ConnectionStrings:ProductionDB"])
             );
             
