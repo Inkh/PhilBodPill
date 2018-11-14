@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PhilBodPill.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,7 @@ namespace PhilBodPill.Data
         {
 
         }
+
+        public DbSet<Product> Product { get; set; }
     }
 }
