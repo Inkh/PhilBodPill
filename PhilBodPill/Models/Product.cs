@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace PhilBodPill.Models
 {
-    public class BodyPillow
+    public class Product
     {
         public int ID { get; set; }
         public string Name { get; set; }
