@@ -5,10 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PhilBodPill.Data;
+using PhilBodPill.Models;
 
 namespace PhilBodPill
 {
@@ -28,6 +30,14 @@ namespace PhilBodPill
         {
             services.AddMvc();
 
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<UserDbContext>()
+                .AddDefaultTokenProviders();
+
+            services.AddDbContext<UserDbContext>(options =>
+            options.UseSqlServer(Configuration["ConnectionStrings:IdentiyConnection"])
+            );
+
             services.AddDbContext<PhilBodPillDbContext>(options =>
             options.UseSqlServer(Configuration["ConnectionStrings:ProductionDB"])
             );
@@ -42,6 +52,7 @@ namespace PhilBodPill
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseAuthentication();
             app.UseStaticFiles();
 
             app.UseMvc(routes =>
