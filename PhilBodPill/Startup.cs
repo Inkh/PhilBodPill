@@ -11,6 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PhilBodPill.Data;
 using PhilBodPill.Models;
+using PhilBodPill.Models.Interfaces;
+using PhilBodPill.Models.Services;
 
 namespace PhilBodPill
 {
@@ -41,7 +43,8 @@ namespace PhilBodPill
             services.AddDbContext<PhilBodPillDbContext>(options =>
             options.UseSqlServer(Configuration["ConnectionStrings:ProductionDB"])
             );
-            
+
+            services.AddScoped<IInventory, ProductService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
