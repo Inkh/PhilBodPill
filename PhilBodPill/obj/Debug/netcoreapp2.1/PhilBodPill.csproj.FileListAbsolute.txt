@@ -50,3 +50,9 @@ C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Debug\netcoreap
 C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Debug\netcoreapp2.1\PhilBodPill.pdb
 C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Debug\netcoreapp2.1\PhilBodPill.csproj.CopyComplete
 C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Debug\netcoreapp2.1\Razor\Views\Products\Create.g.cshtml.cs
+C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Debug\netcoreapp2.1\Razor\Views\Products\Delete.g.cshtml.cs
+C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Debug\netcoreapp2.1\Razor\Views\Products\Details.g.cshtml.cs
+C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Debug\netcoreapp2.1\Razor\Views\Products\Edit.g.cshtml.cs
+C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Debug\netcoreapp2.1\Razor\Views\Products\Index.g.cshtml.cs
