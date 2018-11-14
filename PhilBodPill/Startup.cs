@@ -35,7 +35,7 @@ namespace PhilBodPill
                 .AddDefaultTokenProviders();
 
             services.AddDbContext<UserDbContext>(options =>
-            options.UseSqlServer(Configuration["ConnectionStrings:IdentiyConnection"])
+            options.UseSqlServer(Configuration["ConnectionStrings:IdentityConnection"])
             );
 
             services.AddDbContext<PhilBodPillDbContext>(options =>
