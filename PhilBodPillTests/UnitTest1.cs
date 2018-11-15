@@ -9,7 +9,7 @@ namespace PhilBodPillTests
 {
     public class UnitTest1
     {
-        // PRODUCT TESTS
+        // PRODUCT TESTS (Getters/Setters)
         [Fact]
         public void CanGetName()
         {

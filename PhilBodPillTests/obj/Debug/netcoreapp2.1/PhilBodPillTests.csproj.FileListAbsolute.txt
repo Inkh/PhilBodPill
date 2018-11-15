@@ -7,10 +7,8 @@ C:\Users\nethw\Code\401\PhilBodPill\PhilBodPillTests\bin\Debug\netcoreapp2.1\Phi
 C:\Users\nethw\Code\401\PhilBodPill\PhilBodPillTests\bin\Debug\netcoreapp2.1\PhilBodPillTests.runtimeconfig.json
 C:\Users\nethw\Code\401\PhilBodPill\PhilBodPillTests\bin\Debug\netcoreapp2.1\PhilBodPillTests.runtimeconfig.dev.json
 C:\Users\nethw\Code\401\PhilBodPill\PhilBodPillTests\bin\Debug\netcoreapp2.1\PhilBodPillTests.dll
-C:\Users\nethw\Code\401\PhilBodPill\PhilBodPillTests\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.dll
 C:\Users\nethw\Code\401\PhilBodPill\PhilBodPillTests\bin\Debug\netcoreapp2.1\PhilBodPill.dll
 C:\Users\nethw\Code\401\PhilBodPill\PhilBodPillTests\bin\Debug\netcoreapp2.1\PhilBodPill.pdb
-C:\Users\nethw\Code\401\PhilBodPill\PhilBodPillTests\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.xml
 C:\Users\nethw\Code\401\PhilBodPill\PhilBodPillTests\obj\Debug\netcoreapp2.1\PhilBodPillTests.csprojAssemblyReference.cache
 C:\Users\nethw\Code\401\PhilBodPill\PhilBodPillTests\obj\Debug\netcoreapp2.1\PhilBodPillTests.csproj.CoreCompileInputs.cache
 C:\Users\nethw\Code\401\PhilBodPill\PhilBodPillTests\obj\Debug\netcoreapp2.1\PhilBodPillTests.AssemblyInfoInputs.cache

@@ -41,7 +41,7 @@ namespace PhilBodPill.Controllers
             {
                 User user = new User()
                 {
-                    UserName = rvm.UID,
+                    UserName = rvm.UserName,
                     FirstName = rvm.FirstName,
                     LastName = rvm.LastName,
                     UserEmail = rvm.UserEmail,
@@ -65,7 +65,29 @@ namespace PhilBodPill.Controllers
             }
             return View();
         }
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel lvm)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _signInManager.PasswordSignInAsync(lvm.UserName, lvm.Password, false, false);
 
+                if (result.Succeeded)
+                {
+                    return RedirectToAction(nameof(Success));
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("", "You did a bad!");
+            }
+            return RedirectToAction(nameof(Fail));
+        }
 
     }
 }

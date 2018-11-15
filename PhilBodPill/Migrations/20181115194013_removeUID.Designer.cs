@@ -10,14 +10,14 @@ using PhilBodPill.Data;
 namespace PhilBodPill.Migrations
 {
     [DbContext(typeof(UserDbContext))]
-    [Migration("20181114183623_intialCreate")]
-    partial class intialCreate
+    [Migration("20181115194013_removeUID")]
+    partial class removeUID
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.3-rtm-32065")
+                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -171,8 +171,6 @@ namespace PhilBodPill.Migrations
                     b.Property<string>("SecurityStamp");
 
                     b.Property<bool>("TwoFactorEnabled");
-
-                    b.Property<string>("UID");
 
                     b.Property<string>("UserEmail");
 

@@ -7,8 +7,8 @@
 </head>
 <body>
     <nav>
-        <a href="#">Register</a>
-        <a href="#">Login</a>
+        @Html.ActionLink("Register", "Register", "User")
+        @Html.ActionLink("Log In", "Login", "User")
     </nav>
     <div>
         @RenderBody()

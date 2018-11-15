@@ -10,7 +10,7 @@ namespace PhilBodPill.Models.ViewModels
     {
         [Required]
         [Display(Name = "User Name")]
-        public string UID { get; set; }
+        public string UserName { get; set; }
         [Required]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }

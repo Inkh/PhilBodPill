@@ -1,0 +1,17 @@
+﻿@model PhilBodPill.Models.ViewModels.LoginViewModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = "_Layout";
+}
+
+<h2>This is the Login Page</h2>
+
+<form method="post">
+    <label asp-for="UserName"></label>
+    <input asp-for="UserName" alt="Enter Username" placeholder="Enter Username" />
+
+    <label asp-for="Password"></label>
+    <input asp-for="Password" alt="Enter Password" placeholder="Enter Password" />
+
+    <button type="submit">Log In</button>
+</form>
