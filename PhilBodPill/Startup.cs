@@ -41,7 +41,7 @@ namespace PhilBodPill
             );
 
             services.AddDbContext<PhilBodPillDbContext>(options =>
-            options.UseSqlServer(Configuration["ConnectionStrings:ProductionDB"])
+            options.UseSqlServer(Configuration["ConnectionStrings:ProductionDb"])
             );
 
             services.AddScoped<IInventory, ProductService>();
