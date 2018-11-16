@@ -1,10 +1,20 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using Microsoft.AspNetCore.Identity;
+@using PhilBodPill.Models
+
+@inject SignInManager<User> SignInManager
 @{
     ViewData["Title"] = "Home";
     Layout = "_Layout";
 }
 <h1>HOME</h1>
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <h2> @User.Claims.First(name => name.Type == "greeting").Value </h2>
+}
+else
+{
+    <p>You are not logged in.</p>
+}
 
 <h3>Get you some high quality philospher body pillows.</h3>

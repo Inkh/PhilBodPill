@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using PhilBodPill.Models;
 using PhilBodPill.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace PhilBodPill.Controllers
@@ -55,8 +57,10 @@ namespace PhilBodPill.Controllers
 
                 if (result.Succeeded)
                 {
+                    Claim greeting = new Claim("greeting", $"Welcome back, {user.FirstName}");
+                    await _userManager.AddClaimAsync(user, greeting);
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction(nameof(Success));
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {
@@ -89,5 +93,12 @@ namespace PhilBodPill.Controllers
             return RedirectToAction(nameof(Fail));
         }
 
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
