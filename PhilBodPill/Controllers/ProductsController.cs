@@ -19,8 +19,8 @@ namespace PhilBodPill.Controllers
             _inventory = context;
         }
 
-        [AllowAnonymous]
         //GET: Products
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             return View(await _inventory.GetProducts());
@@ -46,8 +46,8 @@ namespace PhilBodPill.Controllers
             return View(product);
         }
 
-        [Authorize(Policy = "AdminOnly")]
         // GET: Products/Create
+        [Authorize(Policy = "AdminOnly")]
         public IActionResult Create()
         {
             return View();
@@ -68,8 +68,8 @@ namespace PhilBodPill.Controllers
             return View(product);
         }
 
-        [Authorize(Policy = "AdminOnly")]
         // GET: Products/Edit/5
+        [Authorize(Policy = "AdminOnly")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -119,8 +119,8 @@ namespace PhilBodPill.Controllers
             return View(product);
         }
 
-        [Authorize(Policy = "AdminOnly")]
         // GET: Products/Delete/5
+        [Authorize(Policy = "AdminOnly")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
