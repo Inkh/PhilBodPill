@@ -13,6 +13,7 @@ using PhilBodPill.Data;
 using PhilBodPill.Models;
 using PhilBodPill.Models.Interfaces;
 using PhilBodPill.Models.Services;
+using PhilBodPill.Models.Handlers;
 
 namespace PhilBodPill
 {
@@ -36,6 +37,12 @@ namespace PhilBodPill
                 .AddEntityFrameworkStores<UserDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.AccessDeniedPath = "/User/AccessDenied";
+                options.LoginPath = "/User/Login";
+            });
+
             services.AddDbContext<UserDbContext>(options =>
             options.UseSqlServer(Configuration["ConnectionStrings:IdentityConnection"])
             );
@@ -43,6 +50,11 @@ namespace PhilBodPill
             services.AddDbContext<PhilBodPillDbContext>(options =>
             options.UseSqlServer(Configuration["ConnectionStrings:ProductionDb"])
             );
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("NoChetsAllowed", policy => policy.Requirements.Add(new ForbiddenNameRequirement("Chet")));
+            });
 
             services.AddScoped<IInventory, ProductService>();
         }

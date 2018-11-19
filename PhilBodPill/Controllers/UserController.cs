@@ -58,7 +58,13 @@ namespace PhilBodPill.Controllers
                 if (result.Succeeded)
                 {
                     Claim greeting = new Claim("greeting", $"Welcome back, {user.FirstName}");
-                    await _userManager.AddClaimAsync(user, greeting);
+                    Claim firstNameLower = new Claim("firstNameLower", user.FirstName.ToLower());
+                    List<Claim> myClaims = new List<Claim>()
+                    {
+                        greeting,
+                        firstNameLower
+                    };
+                    await _userManager.AddClaimsAsync(user, myClaims);
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction("Index", "Home");
                 }
@@ -75,7 +81,7 @@ namespace PhilBodPill.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Login(LoginViewModel lvm)
+        public async Task<IActionResult> Login(LoginViewModel lvm, string returnUrl = null)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +89,7 @@ namespace PhilBodPill.Controllers
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction(nameof(Success));
+                    return RedirectToLocal(returnUrl);
                 }
             }
             else
@@ -99,6 +105,24 @@ namespace PhilBodPill.Controllers
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
+        }
+
+        private IActionResult RedirectToLocal(string returnUrl)
+        {
+            if (Url.IsLocalUrl(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
+
+        [HttpGet]
+        public IActionResult AccessDenied()
+        {
+            return View();
         }
     }
 }
