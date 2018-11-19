@@ -66,6 +66,8 @@ namespace PhilBodPill.Controllers
                     };
                     await _userManager.AddClaimsAsync(user, myClaims);
                     await _signInManager.SignInAsync(user, isPersistent: false);
+
+
                     return RedirectToAction("Index", "Home");
                 }
                 else
