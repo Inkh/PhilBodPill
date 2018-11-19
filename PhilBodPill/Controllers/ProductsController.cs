@@ -10,7 +10,6 @@ using PhilBodPill.Models.Interfaces;
 
 namespace PhilBodPill.Controllers
 {
-    
     public class ProductsController : Controller
     {
         private readonly IInventory _inventory;
@@ -20,6 +19,7 @@ namespace PhilBodPill.Controllers
             _inventory = context;
         }
 
+        [AllowAnonymous]
         //GET: Products
         public async Task<IActionResult> Index()
         {
@@ -46,6 +46,7 @@ namespace PhilBodPill.Controllers
             return View(product);
         }
 
+        [Authorize(Policy = "AdminOnly")]
         // GET: Products/Create
         public IActionResult Create()
         {
@@ -67,6 +68,7 @@ namespace PhilBodPill.Controllers
             return View(product);
         }
 
+        [Authorize(Policy = "AdminOnly")]
         // GET: Products/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -117,6 +119,7 @@ namespace PhilBodPill.Controllers
             return View(product);
         }
 
+        [Authorize(Policy = "AdminOnly")]
         // GET: Products/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
