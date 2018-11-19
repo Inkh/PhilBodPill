@@ -67,6 +67,12 @@ namespace PhilBodPill.Controllers
                     await _userManager.AddClaimsAsync(user, myClaims);
                     await _signInManager.SignInAsync(user, isPersistent: false);
 
+                    List<string> adminList = new List<string> { "nethwebdev@gmail.com", "admin@admin.com", "amanda@codefellows.com" };
+
+                    if (adminList.Contains(rvm.UserEmail))
+                    {
+                        await _userManager.AddToRoleAsync(user, UserRoles.Admin);
+                    }
 
                     return RedirectToAction("Index", "Home");
                 }
