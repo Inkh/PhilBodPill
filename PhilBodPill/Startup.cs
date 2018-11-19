@@ -44,7 +44,7 @@ namespace PhilBodPill
             });
 
             services.AddDbContext<UserDbContext>(options =>
-            options.UseSqlServer(Configuration["ConnectionStrings:IdentityConnection"])
+            options.UseSqlServer(Configuration["ConnectionStrings:IdentityProductionConnection"])
             );
 
             services.AddDbContext<PhilBodPillDbContext>(options =>
