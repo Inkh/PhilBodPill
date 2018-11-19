@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using PhilBodPill.Data;
 using PhilBodPill.Models;
 using PhilBodPill.Models.ViewModels;
 using System;
@@ -15,12 +16,14 @@ namespace PhilBodPill.Controllers
     {
         private UserManager<User> _userManager;
         private SignInManager<User> _signInManager;
-
-        public UserController(UserManager<User> userManager, SignInManager<User> signInManager)
+        private UserDbContext _context;
+        public UserController(UserManager<User> userManager, SignInManager<User> signInManager, UserDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _context = context;
         }
+
         [HttpGet]
         public IActionResult Register()
         {
@@ -41,6 +44,8 @@ namespace PhilBodPill.Controllers
         {
             if(ModelState.IsValid)
             {
+                CheckUserRolesExist();
+
                 User user = new User()
                 {
                     UserName = rvm.UserName,
@@ -64,8 +69,19 @@ namespace PhilBodPill.Controllers
                         greeting,
                         firstNameLower
                     };
+
+                    List<string> adminList = new List<string> { "nethwebdev@gmail.com", "admin@admin.com", "amanda@codefellows.com" };
+
+                    if (adminList.Contains(rvm.UserEmail))
+                    {
+                        await _userManager.AddToRoleAsync(user, UserRoles.Admin);
+                    }
+                    await _userManager.AddToRoleAsync(user, UserRoles.User);
                     await _userManager.AddClaimsAsync(user, myClaims);
                     await _signInManager.SignInAsync(user, isPersistent: false);
+
+
+
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -123,6 +139,24 @@ namespace PhilBodPill.Controllers
         public IActionResult AccessDenied()
         {
             return View();
+        }
+
+        public void CheckUserRolesExist()
+        {
+            if (!_context.Roles.Any())
+            {
+                List<IdentityRole> Roles = new List<IdentityRole>
+                {
+                    new IdentityRole{Name = UserRoles.Admin, NormalizedName=UserRoles.Admin.ToString(), ConcurrencyStamp = Guid.NewGuid().ToString()},
+                    new IdentityRole{Name = UserRoles.User, NormalizedName=UserRoles.User.ToString(), ConcurrencyStamp = Guid.NewGuid().ToString()},
+                };
+
+                foreach (var role in Roles)
+                {
+                    _context.Roles.Add(role);
+                    _context.SaveChanges();
+                }
+            }
         }
     }
 }

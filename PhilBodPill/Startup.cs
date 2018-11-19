@@ -54,6 +54,7 @@ namespace PhilBodPill
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("NoChetsAllowed", policy => policy.Requirements.Add(new ForbiddenNameRequirement("Chet")));
+                options.AddPolicy("AdminOnly", policy => policy.RequireRole(UserRoles.Admin));
             });
 
             services.AddScoped<IInventory, ProductService>();
