@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PhilBodPill.Models;
@@ -9,6 +10,7 @@ using PhilBodPill.Models.Interfaces;
 
 namespace PhilBodPill.Controllers
 {
+    
     public class ProductsController : Controller
     {
         private readonly IInventory _inventory;
@@ -26,6 +28,7 @@ namespace PhilBodPill.Controllers
 
 
         // GET: Products/Details/5
+        [Authorize(Policy = "NoChetsAllowed")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)

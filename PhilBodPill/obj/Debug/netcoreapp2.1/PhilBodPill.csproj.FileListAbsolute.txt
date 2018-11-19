@@ -68,3 +68,4 @@ C:\Users\nethw\Code\401\PhilBodPill\PhilBodPill\obj\Debug\netcoreapp2.1\Razor\Vi
 C:\Users\nethw\Code\401\PhilBodPill\PhilBodPill\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
 C:\Users\nethw\Code\401\PhilBodPill\PhilBodPill\obj\Debug\netcoreapp2.1\Razor\Views\User\Login.g.cshtml.cs
 C:\Users\nethw\Code\401\PhilBodPill\PhilBodPill\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+C:\Users\nethw\Code\401\PhilBodPill\PhilBodPill\obj\Debug\netcoreapp2.1\Razor\Views\User\AccessDenied.g.cshtml.cs

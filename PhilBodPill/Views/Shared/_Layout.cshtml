@@ -11,19 +11,20 @@
 </head>
 <body>
     <nav>
-            @if (SignInManager.IsSignedIn(User))
-            {
-                @User.Claims.First(name => name.Type == "greeting").Value;
-                <form asp-action="Logout" asp-controller="User" method="post">
-                    <button type="submit">Logout!</button>
-                </form>
-            }
-            else
-            {
-                @Html.ActionLink("Register", "Register", "User")
-                @Html.ActionLink("Log In", "Login", "User")
-            }
-        </nav>
+        @if (SignInManager.IsSignedIn(User))
+        {
+            @User.Claims.First(name => name.Type == "greeting").Value;
+            <form asp-action="Logout" asp-controller="User" method="post">
+                <button type="submit">Logout!</button>
+            </form>
+        }
+        else
+        {
+            @Html.ActionLink("Register", "Register", "User");
+            @Html.ActionLink("Log In", "Login", "User");
+        };
+        @Html.ActionLink("Our Products", "Index", "Products")
+    </nav>
     <div>
         @RenderBody()
     </div>
