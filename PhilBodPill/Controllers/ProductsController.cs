@@ -28,7 +28,7 @@ namespace PhilBodPill.Controllers
 
 
         // GET: Products/Details/5
-        [Authorize(Policy = "NoChetsAllowed")]
+        //[Authorize(Policy = "NoChetsAllowed")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)

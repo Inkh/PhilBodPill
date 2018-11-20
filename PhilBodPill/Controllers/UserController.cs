@@ -62,7 +62,15 @@ namespace PhilBodPill.Controllers
 
                 if (result.Succeeded)
                 {
-                    Claim greeting = new Claim("greeting", $"Welcome back, {user.FirstName}");
+                    Claim greeting;
+                    if (user.FirstName.ToLower() == "chet")
+                    {
+                        greeting = new Claim("greeting", "Dammit Chet!");
+                    }
+                    else
+                    {
+                        greeting = new Claim("greeting", $"Hello, {user.FirstName}!");
+                    }
                     Claim firstNameLower = new Claim("firstNameLower", user.FirstName.ToLower());
                     List<Claim> myClaims = new List<Claim>()
                     {
