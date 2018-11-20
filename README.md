@@ -13,7 +13,7 @@ Philosopher body pillows specialize in the territory of comfortable body pillows
 
 Each of our pillows have a famous philosopher printed on it with 1:1 true to size representation. It's like you're spending the night with the actual philosopher of your choice!
 
-###### DISCLAIMER: Actual enlightenment is not guaranteed. User experience may vary.  
+###### DISCLAIMER: Actual conversation is not guaranteed. User experiences may vary.  
 
 ### Product Care
 ---
