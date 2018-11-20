@@ -48,7 +48,7 @@ namespace PhilBodPill
             );
 
             services.AddDbContext<PhilBodPillDbContext>(options =>
-            options.UseSqlServer(Configuration["ConnectionStrings:ProductionDb"])
+            options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"])
             );
 
             services.AddAuthorization(options =>

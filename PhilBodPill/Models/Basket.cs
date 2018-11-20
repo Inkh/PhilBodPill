@@ -13,7 +13,6 @@ namespace PhilBodPill.Models
         public int Quantity { get; set; }
 
         //Nav props
-        public User User { get; set; }
         public Product Product { get; set; }
     }
 }
