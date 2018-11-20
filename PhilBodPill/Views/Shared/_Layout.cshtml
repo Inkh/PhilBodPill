@@ -15,10 +15,12 @@
         <ul class="nav-items">
             @if (SignInManager.IsSignedIn(User))
             {
+            <li>
                 @User.Claims.First(name => name.Type == "greeting").Value;
+            </li>
             <li>
                 <form asp-action="Logout" asp-controller="User" method="post">
-                    <button type="submit">Logout!</button>
+                    <input class="fancy-button" type="submit" value="Logout" />
                 </form>
             </li>
             }
