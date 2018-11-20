@@ -7,15 +7,16 @@
     Layout = "_Layout";
 }
 <h1>HOME</h1>
+<div class="info-text">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <h2> @User.Claims.First(name => name.Type == "greeting").Value </h2>
+    }
+    else
+    {
+        <p>You are not logged in.</p>
+    }
 
-@if (SignInManager.IsSignedIn(User))
-{
-    <h2> @User.Claims.First(name => name.Type == "greeting").Value </h2>
-}
-else
-{
-    <p>You are not logged in.</p>
-}
-
-<h3>Get you some high quality philospher body pillows.</h3>
-<h4>Unless your name is Chet. No Chets Allowed!</h4>
+    <h3>Get you some high quality philospher body pillows.</h3>
+</div>
+<h4 class="danger-text">Unless your name is Chet. <strong>No</strong> Chets Allowed!</h4>

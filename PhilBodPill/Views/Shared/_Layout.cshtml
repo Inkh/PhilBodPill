@@ -8,26 +8,38 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <link href="~/css/style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
     <nav>
-        @if (SignInManager.IsSignedIn(User))
-        {
-            @User.Claims.First(name => name.Type == "greeting").Value;
-            <form asp-action="Logout" asp-controller="User" method="post">
-                <button type="submit">Logout!</button>
-            </form>
-        }
-        else
-        {
-            @Html.ActionLink("Register", "Register", "User");
-            @Html.ActionLink("Log In", "Login", "User");
-        };
-        @Html.ActionLink("Our Products", "Index", "Products")
+        <ul class="nav-items">
+            @if (SignInManager.IsSignedIn(User))
+            {
+                @User.Claims.First(name => name.Type == "greeting").Value;
+            <li>
+                <form asp-action="Logout" asp-controller="User" method="post">
+                    <button type="submit">Logout!</button>
+                </form>
+            </li>
+            }
+            else
+            {
+                <li>
+                    @Html.ActionLink("Register", "Register", "User")
+                </li>
+                <li>
+                    @Html.ActionLink("Log In", "Login", "User")
+                </li>
+            }
+            <li>
+            @Html.ActionLink("Our Products", "Index", "Products")
+            </li>
+        </ul>
+        
     </nav>
-    <div>
+    <main>
         @RenderBody()
         @RenderSection("Scripts", required: false)
-    </div>
+    </main>
 </body>
 </html>
