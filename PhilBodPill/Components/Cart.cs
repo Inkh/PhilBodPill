@@ -18,10 +18,11 @@ namespace PhilBodPill.Components
 
         public async Task<IViewComponentResult> InvokeAsync(int id)
         {
-            
+            var baskets = (from bask in _context.Basket
+                           where bask.UserID == id
+                           select bask);
 
-            return View(baskets);
-
+                return View(baskets);
         }
 
     }
