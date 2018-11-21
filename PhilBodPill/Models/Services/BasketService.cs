@@ -33,9 +33,8 @@ namespace PhilBodPill.Models.Services
         /// <param name="id">Id of the basket to be updated</param>
         /// <param name="quantity">The new quantity the basket will be updated with</param>
         /// <returns>Nothing, updates the basket in databse table</returns>
-        public async Task UpdateBasket(int id, int quantity)
+        public async Task UpdateBasket(Basket basket, int quantity)
         {
-            Basket basket = await GetOneBasket(id);
             basket.Quantity = quantity;
             _context.Basket.Update(basket);
             await _context.SaveChangesAsync();
@@ -56,7 +55,7 @@ namespace PhilBodPill.Models.Services
             return await _context.Basket.Include(b => b.Product).Where(x => x.UserID == userID).ToListAsync();
         }
 
-        public async Task<Basket> GetOneBasket(int id)
+        public async Task<Basket> GetOneBasket(int? id)
         {
             return await _context.Basket.FirstOrDefaultAsync(b => b.ID == id);
         }
