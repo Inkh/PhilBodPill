@@ -13,10 +13,12 @@ namespace PhilBodPill.Controllers
     public class ProductsController : Controller
     {
         private readonly IInventory _inventory;
+        private readonly IBasket _basket;
 
-        public ProductsController(IInventory context)
+        public ProductsController(IInventory inventory, IBasket basket)
         {
-            _inventory = context;
+            _inventory = inventory;
+            _basket = basket;
         }
 
         //GET: Products
@@ -144,6 +146,19 @@ namespace PhilBodPill.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             await _inventory.DeleteProduct(id);
+            return RedirectToAction(nameof(Index));
+        }
+
+        // POST: Products/CreateBasket
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> CreateBasket([Bind("ProductID,UserID,Quantity")]Basket basket)
+        {
+            if (ModelState.IsValid)
+            {
+                await _basket.CreateBasket(basket);
+                return RedirectToAction(nameof(Index));
+            }
             return RedirectToAction(nameof(Index));
         }
 
