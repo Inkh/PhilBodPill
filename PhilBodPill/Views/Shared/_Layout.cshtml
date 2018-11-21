@@ -16,7 +16,7 @@
             @if (SignInManager.IsSignedIn(User))
             {
             <li>
-                @User.Claims.First(name => name.Type == "greeting").Value;
+                @User.Claims.First(name => name.Type == "greeting").Value
             </li>
             <li>
                 <form asp-action="Logout" asp-controller="User" method="post">
@@ -40,8 +40,17 @@
         
     </nav>
     <main>
-        @RenderBody()
-        @RenderSection("Scripts", required: false)
+        <div class="main-container">
+            @RenderBody()
+            @RenderSection("Scripts", required: false)
+        </div>
+        @if (SignInManager.IsSignedIn(User))
+        {
+        <div class="cart-container">
+            <h2>Your Cart</h2>
+            @await Component.InvokeAsync("Cart", User.Claims.First(name => name.Type == "userID").Value)
+        </div>
+        }
     </main>
 </body>
 </html>

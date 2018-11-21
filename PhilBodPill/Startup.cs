@@ -45,10 +45,12 @@ namespace PhilBodPill
 
             services.AddDbContext<UserDbContext>(options =>
             options.UseSqlServer(Configuration["ConnectionStrings:IdentityProductionConnection"])
+            //options.UseSqlServer(Configuration["ConnectionStrings:IdentityConnection"])
             );
 
             services.AddDbContext<PhilBodPillDbContext>(options =>
             options.UseSqlServer(Configuration["ConnectionStrings:ProductionDb"])
+            //options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"])
             );
 
             services.AddAuthorization(options =>
@@ -58,6 +60,7 @@ namespace PhilBodPill
             });
 
             services.AddScoped<IInventory, ProductService>();
+            services.AddScoped<IBasket, BasketService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
