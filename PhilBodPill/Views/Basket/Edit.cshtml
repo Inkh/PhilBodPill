@@ -1,42 +1,25 @@
 ﻿@model PhilBodPill.Models.Basket
 
 @{
-    ViewData["Title"] = "View";
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
 }
 
-<h2>View</h2>
+<h2>Update Quantity</h2>
 
-<h4>Basket</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="ID" />
-            <div class="form-group">
-                <label asp-for="UserID" class="control-label"></label>
-                <input asp-for="UserID" class="form-control" />
-                <span asp-validation-for="UserID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProductID" class="control-label"></label>
-                <input asp-for="ProductID"/>
-                <span asp-validation-for="ProductID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Quantity" class="control-label"></label>
-                <input asp-for="Quantity" class="form-control" />
-                <span asp-validation-for="Quantity" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </form>
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="ID" />
+    <input type="number" name="Quantity" value="@Model.Quantity" />
+    <input type="submit" value="Update" />
+</form>
+
+<div class="pillow-card">
+    <h3>@Html.DisplayFor(modelItem => Model.Product.Name) Pillow</h3>
+    <img src="@Model.Product.Image" />
+    <p>@Html.DisplayFor(modelItem => Model.Product.Description)</p>
+    <div class="item-price">
+        <h5>@Html.DisplayFor(modelItem => Model.Product.Price)</h5>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

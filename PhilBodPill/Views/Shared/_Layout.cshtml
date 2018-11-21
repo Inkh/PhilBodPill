@@ -47,8 +47,17 @@
         @if (SignInManager.IsSignedIn(User))
         {
         <div class="cart-container">
-            <h2>Your Cart</h2>
-            @await Component.InvokeAsync("Cart", User.Claims.First(name => name.Type == "userID").Value)
+            @if (User.Claims.First(n => n.Type == "firstNameLower").Value == "chet")
+            {
+                <h4>Chet is not allowed to shop here.</h4>
+            }
+            else
+            {
+                <a href="/Basket/Index">
+                    <h2>Your Cart</h2>
+                </a>
+                @await Component.InvokeAsync("Cart", User.Claims.First(name => name.Type == "userID").Value)
+            }
         </div>
         }
     </main>
