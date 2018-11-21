@@ -72,10 +72,12 @@ namespace PhilBodPill.Controllers
                         greeting = new Claim("greeting", $"Hello, {user.FirstName}!");
                     }
                     Claim firstNameLower = new Claim("firstNameLower", user.FirstName.ToLower());
+                    Claim userID = new Claim("userID", user.Id);
                     List<Claim> myClaims = new List<Claim>()
                     {
                         greeting,
-                        firstNameLower
+                        firstNameLower,
+                        userID
                     };
 
                     List<string> adminList = new List<string> { "nethwebdev@gmail.com", "admin@admin.com", "amanda@codefellows.com" };
