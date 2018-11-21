@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PhilBodPill.Data;
 using System;
 using System.Collections.Generic;
@@ -18,11 +19,8 @@ namespace PhilBodPill.Components
 
         public async Task<IViewComponentResult> InvokeAsync(int id)
         {
-            var baskets = (from bask in _context.Basket
-                           where bask.UserID == id
-                           select bask);
-
-                return View(baskets);
+            var baskets = await _context.Basket.Where(b => b.UserID == id).ToListAsync();
+            return View(baskets);
         }
 
     }

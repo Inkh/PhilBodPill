@@ -16,11 +16,14 @@
             @if (SignInManager.IsSignedIn(User))
             {
                 @User.Claims.First(name => name.Type == "greeting").Value;
-            <li>
-                <form asp-action="Logout" asp-controller="User" method="post">
-                    <button type="submit">Logout!</button>
-                </form>
-            </li>
+                <li>
+                    @await Component.InvokeAsync("Cart", User.Claims.First(name => name.Type == "userID"))
+                </li>
+                <li>
+                    <form asp-action="Logout" asp-controller="User" method="post">
+                        <button type="submit">Logout!</button>
+                    </form>
+                </li>
             }
             else
             {
@@ -32,7 +35,7 @@
                 </li>
             }
             <li>
-            @Html.ActionLink("Our Products", "Index", "Products")
+                @Html.ActionLink("Our Products", "Index", "Products")
             </li>
         </ul>
         
