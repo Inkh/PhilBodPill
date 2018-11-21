@@ -11,7 +11,7 @@ namespace PhilBodPill.Models.Interfaces
         Task CreateBasket(Basket basket);
 
         // Update (User has updated the quantity of an item in their cart)
-        Task UpdateBasket(int id, int quantity);
+        Task UpdateBasket(Basket basket);
 
         // Delete (User has removed an item from their cart)
         Task DeleteBasket(int id);
@@ -20,6 +20,6 @@ namespace PhilBodPill.Models.Interfaces
         Task<IEnumerable<Basket>> GetAllByUserID(string userID);
 
         // Get One Basket
-        Task<Basket> GetOneBasket(int id);
+        Task<Basket> GetOneBasket(int? id);
     }
 }
