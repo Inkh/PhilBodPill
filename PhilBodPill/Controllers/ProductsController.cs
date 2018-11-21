@@ -152,7 +152,7 @@ namespace PhilBodPill.Controllers
         // POST: Products/CreateBasket
         [HttpPost]
         [Authorize]
-        public async Task<IActionResult> CreateBasket([Bind("ProductID,UserID,Quantity")]Basket basket)
+        public async Task<IActionResult> CreateBasket([Bind("ID,ProductID,UserID,Quantity")]Basket basket)
         {
             if (ModelState.IsValid)
             {

@@ -46,7 +46,7 @@
                 else
                 {
                     <form method="post" asp-action="CreateBasket">
-                        <input type="hidden" name="UserID" value="@User." />
+                        <input type="hidden" name="UserID" value="@User.Claims.First(id => id.Type == "userID").Value" />
                         <input type="hidden" name="ProductID" value="@Model.ID" />
                         <label for="Quantity">Quantity</label>
                         <input type="number" name="Quantity" value="1" />

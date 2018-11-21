@@ -17,7 +17,7 @@ namespace PhilBodPill.Models.Interfaces
         Task DeleteBasket(int id);
 
         // Get All By User ID
-        IEnumerable<Basket> GetAllByUserID(int userID);
+        Task<IEnumerable<Basket>> GetAllByUserID(string userID);
 
         // Get One Basket
         Task<Basket> GetOneBasket(int id);

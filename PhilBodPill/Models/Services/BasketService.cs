@@ -11,6 +11,12 @@ namespace PhilBodPill.Models.Services
     public class BasketService : IBasket
     {
         private PhilBodPillDbContext _context;
+
+        public BasketService(PhilBodPillDbContext context)
+        {
+            _context = context;
+        }
+
         /// <summary>
         /// Creates a new Basket Object when user adds something to their cart
         /// </summary>
@@ -45,9 +51,9 @@ namespace PhilBodPill.Models.Services
             _context.Basket.Remove(basket);
         }
 
-        public IEnumerable<Basket> GetAllByUserID(int userID)
+        public async Task<IEnumerable<Basket>> GetAllByUserID(string userID)
         {
-            return _context.Basket.Where(x => x.UserID == userID);
+            return await _context.Basket.Include(b => b.Product).Where(x => x.UserID == userID).ToListAsync();
         }
 
         public async Task<Basket> GetOneBasket(int id)

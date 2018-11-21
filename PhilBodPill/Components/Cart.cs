@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PhilBodPill.Data;
+using PhilBodPill.Models.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +11,16 @@ namespace PhilBodPill.Components
 {
     public class Cart : ViewComponent
     {
-        private PhilBodPillDbContext _context;
+        private readonly IBasket _basket;
 
-        public Cart(PhilBodPillDbContext context)
+        public Cart(IBasket basket)
         {
-            _context = context;
+            _basket = basket;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync(int id)
+        public async Task<IViewComponentResult> InvokeAsync(string id)
         {
-            var baskets = await _context.Basket.Where(b => b.UserID == id).ToListAsync();
+            var baskets = await _basket.GetAllByUserID(id);
             return View(baskets);
         }
 
