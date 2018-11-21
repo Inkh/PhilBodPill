@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PhilBodPill.Models;
@@ -22,9 +23,10 @@ namespace PhilBodPill.Controllers
 
         //GET: Baskets by UserID
         //Grabs the shopping cart for current logged in user.
-        public async Task<IActionResult> Index()
+        [Authorize(Policy = "NoChetsAllowed")]
+        public IActionResult Index()
         {
-            return View(await _basket.GetAllByUserID("41a23960-e4f6-4850-8857-0cf95d72c913"));
+            return View();
         }
 
         // GET: Baskets/Edit/5
@@ -48,58 +50,35 @@ namespace PhilBodPill.Controllers
         // Allows the editing of product quantity in cart.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,UserID,ProductID,Quantity")] Basket basket)
+        public async Task<IActionResult> Edit(int id, [Bind("Quantity")] int quantity)
         {
-            if (id != basket.ID)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    await _basket.UpdateBasket(basket);
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!BasketExists(basket.ID))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(basket);
+            await _basket.UpdateBasket(id, quantity);
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Baskets/Delete/5
         // Removes a basket item from cart.
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+        //public async Task<IActionResult> Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            var basket = await _basket.GetOneBasket(id);
+        //    var basket = await _basket.GetOneBasket(id);
 
-            if (basket == null)
-            {
-                return NotFound();
-            }
+        //    if (basket == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return View(basket);
-        }
+        //    return View(basket);
+        //}
 
         // POST: Basket/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> ConfirmDelete(int id)
         {
             await _basket.DeleteBasket(id);
             return RedirectToAction(nameof(Index));
