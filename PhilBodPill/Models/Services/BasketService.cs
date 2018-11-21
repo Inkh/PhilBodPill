@@ -33,9 +33,8 @@ namespace PhilBodPill.Models.Services
         /// <param name="id">Id of the basket to be updated</param>
         /// <param name="quantity">The new quantity the basket will be updated with</param>
         /// <returns>Nothing, updates the basket in databse table</returns>
-        public async Task UpdateBasket(Basket basket, int quantity)
+        public async Task UpdateBasket(Basket basket)
         {
-            basket.Quantity = quantity;
             _context.Basket.Update(basket);
             await _context.SaveChangesAsync();
         }

@@ -24,7 +24,7 @@ namespace PhilBodPill.Controllers
         //Grabs the shopping cart for current logged in user.
         public async Task<IActionResult> Index()
         {
-            return View(await _basket.GetAllByUserID("13"));
+            return View(await _basket.GetAllByUserID("41a23960-e4f6-4850-8857-0cf95d72c913"));
         }
 
         // GET: Baskets/Edit/5
@@ -48,7 +48,7 @@ namespace PhilBodPill.Controllers
         // Allows the editing of product quantity in cart.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,UserID,ProductID,Quantity")] Basket basket, int quantity)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,UserID,ProductID,Quantity")] Basket basket)
         {
             if (id != basket.ID)
             {
@@ -59,7 +59,7 @@ namespace PhilBodPill.Controllers
             {
                 try
                 {
-                    await _basket.UpdateBasket(basket, quantity);
+                    await _basket.UpdateBasket(basket);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
