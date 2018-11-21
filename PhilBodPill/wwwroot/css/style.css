@@ -26,8 +26,22 @@ main {
     color: #ff5a5a;
 }
 
-/* nav styles */
+.fancy-button {
+    background-color: #ff771e;
+    padding: 5px;
+    border: 1px #bb4a00 solid;
+    border-radius: 25px;
+    color: black;
+    text-decoration: none;
+}
 
+.fancy-button:hover {
+    background-color: #fffc56;
+    border: 1px #7e7c00 solid;
+    cursor: pointer;
+}
+
+/* nav styles */
 nav {
     align-items: center;
     background-color: #000644;
@@ -71,5 +85,22 @@ nav ul {
 .pillow-card {
     background-color: #a55e8a;
     color: #333;
+    margin: 5px auto;
     padding: 3px;
+    width: 30%;
+}
+
+.pillow-card:hover {
+    background-color: #fffc56;
+}
+
+/* product details */
+.product-details-area {
+    display: flex;
+    flex-direction: row;
+}
+
+.product-details-area div {
+    margin: 5px auto;
+    width: 30%;
 }

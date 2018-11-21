@@ -8,20 +8,20 @@
 <h2>Index</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a class="fancy-button" Create">Create New</a>
 </p>
 <div class="pillow-cards">
     @foreach (var item in Model)
     {
         string imagePath = $"{item.Image}";
-
-        <div class="pillow-card">
+        string linkPath = $"/Products/Details/{item.ID}";
+        <a class="pillow-card" href="@linkPath">
             <h3>@Html.DisplayFor(modelItem => item.Name) Pillow</h3>
             <img src="@imagePath" />
             <p>@Html.DisplayFor(modelItem => item.Description)</p>
             <div class="item-price">
                 <h5>@Html.DisplayFor(modelItem => item.Price)</h5>
             </div>
-        </div>
+        </a>
     }
 </div>
