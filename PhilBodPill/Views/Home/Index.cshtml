@@ -4,9 +4,9 @@
 @inject SignInManager<User> SignInManager
 @{
     ViewData["Title"] = "Home";
+    ViewData["Heading"] = "Home";
     Layout = "_Layout";
 }
-<h1>HOME</h1>
 <div class="info-text">
     @if (SignInManager.IsSignedIn(User))
     {

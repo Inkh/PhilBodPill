@@ -11,8 +11,16 @@ main {
     margin: 0 auto;
 }
 
+.main-container {
+    background: $main-background;
+    color: $main-text;
+    padding: 5px;
+    text-align: center;
+    width: 70%;
+}
+
 .cart-container {
-    background: #878787;
+    background: $cart-background;
     color: #333;
     padding: 5px;
     text-align: center;
@@ -25,4 +33,11 @@ main {
 
 .danger-text {
     color: $danger-color;
+}
+
+.page-heading {
+    font-family: $handwriting;
+    font-size: 2em;
+    margin: 5px;
+    padding: 5px;
 }

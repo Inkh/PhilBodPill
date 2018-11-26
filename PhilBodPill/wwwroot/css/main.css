@@ -61,6 +61,13 @@ main {
   justify-content: center;
   margin: 0 auto; }
 
+.main-container {
+  background: #494949;
+  color: #b0b0b0;
+  padding: 5px;
+  text-align: center;
+  width: 70%; }
+
 .cart-container {
   background: #878787;
   color: #333;
@@ -73,6 +80,12 @@ main {
 
 .danger-text {
   color: #ff5a5a; }
+
+.page-heading {
+  font-family: "Permanent Marker", cursive;
+  font-size: 2em;
+  margin: 5px;
+  padding: 5px; }
 
 .fancy-button {
   background-color: #fffc56;
