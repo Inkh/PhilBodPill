@@ -1,0 +1,28 @@
+﻿body {
+    background-color: #333;
+    color: #eee;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.cart-container {
+    background: #878787;
+    color: #333;
+    padding: 5px;
+    text-align: center;
+    width: 20%;
+}
+
+.info-text {
+    color: $info-color;
+}
+
+.danger-text {
+    color: $danger-color;
+}
