@@ -132,7 +132,7 @@ WriteAttributeValue("", 410, imagePath, 410, 10, false);
             WriteLiteral("                    <h2>Admin Controlls</h2>\r\n                    <div class=\"fancy-button\">\r\n                        ");
             EndContext();
             BeginContext(864, 54, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "09354fe2664142b284b7b3b2da4264c4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f28e928eab714df390d0f6b0c275e3bc", async() => {
                 BeginContext(910, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -212,7 +212,7 @@ WriteAttributeValue("", 410, imagePath, 410, 10, false);
             WriteLiteral("                    ");
             EndContext();
             BeginContext(1420, 490, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2d5aaffb108845c1a538c46276e42652", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3eca47a6e0f4402ea73d76edfa22f619", async() => {
                 BeginContext(1466, 60, true);
                 WriteLiteral("\r\n                        <input type=\"hidden\" name=\"UserID\"");
                 EndContext();
@@ -277,7 +277,7 @@ WriteAttributeValue("", 1660, Model.ID, 1660, 9, false);
             WriteLiteral("            <div>\r\n                ");
             EndContext();
             BeginContext(2087, 38, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fb0afeb9ae5b48c9ae69b358b27131be", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ee50abeae3374a788aedc78c3a0c46f8", async() => {
                 BeginContext(2109, 12, true);
                 WriteLiteral("Back to List");
                 EndContext();
