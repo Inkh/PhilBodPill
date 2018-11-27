@@ -72,7 +72,7 @@ namespace PhilBodPill.Controllers
                 if (result.Succeeded)
                 {
                     
-                    await _email.SendEmailAsync("nethwebdev@gmail.com", "Thanks for registering", "Hey!");
+                    await _email.SendEmailAsync(rvm.UserEmail, "Thanks for registering", $"Hey {rvm.FirstName.First().ToString().ToUpper() + rvm.FirstName.Substring(1)}!");
 
                     Claim greeting;
                     if (user.FirstName.ToLower() == "chet")
