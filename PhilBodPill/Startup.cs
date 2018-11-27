@@ -14,6 +14,7 @@ using PhilBodPill.Models;
 using PhilBodPill.Models.Interfaces;
 using PhilBodPill.Models.Services;
 using PhilBodPill.Models.Handlers;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace PhilBodPill
 {
@@ -61,6 +62,7 @@ namespace PhilBodPill
 
             services.AddScoped<IInventory, ProductService>();
             services.AddScoped<IBasket, BasketService>();
+            services.AddScoped<IEmailSender, EmailSender>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
