@@ -2,9 +2,11 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using PhilBodPill.Data;
 using PhilBodPill.Models;
 using PhilBodPill.Models.ViewModels;
+using SendGrid;
 using SendGrid.Helpers.Mail;
 using System;
 using System.Collections.Generic;
@@ -20,13 +22,15 @@ namespace PhilBodPill.Controllers
         private SignInManager<User> _signInManager;
         private UserDbContext _context;
         private IEmailSender _email;
+        public IConfiguration Configuration { get; }
 
-        public UserController(UserManager<User> userManager, SignInManager<User> signInManager, UserDbContext context, IEmailSender email)
+        public UserController(UserManager<User> userManager, SignInManager<User> signInManager, UserDbContext context, IEmailSender email, IConfiguration configuration)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _context = context;
             _email = email;
+            Configuration = configuration;
         }
 
         [HttpGet]
@@ -67,7 +71,9 @@ namespace PhilBodPill.Controllers
 
                 if (result.Succeeded)
                 {
-                    await _email.SendEmailAsync("jhwe92@gmail.com", "Thanks for registering", "<p>Hello!</p>");
+                    
+                    await _email.SendEmailAsync("nethwebdev@gmail.com", "Thanks for registering", "Hey!");
+
                     Claim greeting;
                     if (user.FirstName.ToLower() == "chet")
                     {

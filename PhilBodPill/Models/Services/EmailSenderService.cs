@@ -9,30 +9,31 @@ using System.Threading.Tasks;
 
 namespace PhilBodPill.Models
 {
-    public class EmailSender : IEmailSender
+    public class EmailSenderService : IEmailSender
     {
         public IConfiguration Configuration { get; }
 
-        public EmailSender(IConfiguration configuration)
+        public EmailSenderService(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
         public async Task SendEmailAsync(string email, string subject, string htmlMessage)
         {
-            var client = new SendGridClient(Configuration["SendGrid_API_Key"]);
+            var client = new SendGridClient(Configuration["API_Key:SendGrid_API_Key"]);
 
             var msg = new SendGridMessage();
 
-            msg.SetFrom("admin@philbodpill.com", "Philospher Body Pillow Team");
+            msg.SetFrom("jhwe92@gmail.com", "Philospher Body Pillow Team");
 
             msg.AddTo(new EmailAddress("jhwe92@gmail.com"));
+            msg.AddTo(new EmailAddress("nethwebdev@gmail.com"));
 
-            var response = await client.SendEmailAsync(msg);
             msg.SetSubject("Testing the SendGrid C# Library");
 
             msg.AddContent(MimeType.Text, "Hello World plain text!");
             msg.AddContent(MimeType.Html, "<p>Hello World!</p>");
+            var response = await client.SendEmailAsync(msg);
         }
     }
 }
