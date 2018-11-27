@@ -14,6 +14,7 @@ using PhilBodPill.Models;
 using PhilBodPill.Models.Interfaces;
 using PhilBodPill.Models.Services;
 using PhilBodPill.Models.Handlers;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace PhilBodPill
 {
@@ -44,11 +45,13 @@ namespace PhilBodPill
             });
 
             services.AddDbContext<UserDbContext>(options =>
-            options.UseSqlServer(Configuration["ConnectionStrings:IdentityProductionConnection"])
+            //options.UseSqlServer(Configuration["ConnectionStrings:IdentityConnection"])
+            options.UseSqlServer(Configuration["ConnectionStrings:IdentityConnection"])
             );
 
             services.AddDbContext<PhilBodPillDbContext>(options =>
-            options.UseSqlServer(Configuration["ConnectionStrings:ProductionDb"])
+            //options.UseSqlServer(Configuration["ConnectionStrings:ProductionDb"])
+            options.UseSqlServer(Configuration["ConnectionStrings:ProductionDB"])
             );
 
             services.AddAuthorization(options =>
@@ -58,6 +61,8 @@ namespace PhilBodPill
             });
 
             services.AddScoped<IInventory, ProductService>();
+            services.AddScoped<IBasket, BasketService>();
+            services.AddScoped<IEmailSender, EmailSenderService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

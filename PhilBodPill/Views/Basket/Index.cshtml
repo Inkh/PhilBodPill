@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using PhilBodPill.Models
+
+@inject SignInManager<User> SignInManager
+@model IEnumerable<PhilBodPill.Models.Basket>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+    ViewData["Heading"] = "Currently In Cart";
+}
+
+@if (SignInManager.IsSignedIn(User))
+{
+    string uid = User.Claims.First(id => id.Type == "userID").Value;
+    string linkPath = $"/Basket/Checkout?uid={uid}";
+    <a asp-action="Checkout">Proceed to Checkout</a>
+
+    @await Component.InvokeAsync("CartFullDetail", uid);
+
+}
+else
+{
+    <p> You shouldn't even be seeing this page!</p>
+}
+

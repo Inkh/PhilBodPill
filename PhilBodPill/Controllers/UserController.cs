@@ -1,9 +1,13 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using PhilBodPill.Data;
 using PhilBodPill.Models;
 using PhilBodPill.Models.ViewModels;
+using SendGrid;
+using SendGrid.Helpers.Mail;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,11 +21,16 @@ namespace PhilBodPill.Controllers
         private UserManager<User> _userManager;
         private SignInManager<User> _signInManager;
         private UserDbContext _context;
-        public UserController(UserManager<User> userManager, SignInManager<User> signInManager, UserDbContext context)
+        private IEmailSender _email;
+        public IConfiguration Configuration { get; }
+
+        public UserController(UserManager<User> userManager, SignInManager<User> signInManager, UserDbContext context, IEmailSender email, IConfiguration configuration)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _context = context;
+            _email = email;
+            Configuration = configuration;
         }
 
         [HttpGet]
@@ -62,12 +71,25 @@ namespace PhilBodPill.Controllers
 
                 if (result.Succeeded)
                 {
-                    Claim greeting = new Claim("greeting", $"Welcome back, {user.FirstName}");
+                    
+                    await _email.SendEmailAsync(rvm.UserEmail, "Thanks for registering", $"Hey {rvm.FirstName.First().ToString().ToUpper() + rvm.FirstName.Substring(1)}!");
+
+                    Claim greeting;
+                    if (user.FirstName.ToLower() == "chet")
+                    {
+                        greeting = new Claim("greeting", "Dammit Chet!");
+                    }
+                    else
+                    {
+                        greeting = new Claim("greeting", $"Hello, {user.FirstName}!");
+                    }
                     Claim firstNameLower = new Claim("firstNameLower", user.FirstName.ToLower());
+                    Claim userID = new Claim("userID", user.Id);
                     List<Claim> myClaims = new List<Claim>()
                     {
                         greeting,
-                        firstNameLower
+                        firstNameLower,
+                        userID
                     };
 
                     List<string> adminList = new List<string> { "nethwebdev@gmail.com", "admin@admin.com", "amanda@codefellows.com" };

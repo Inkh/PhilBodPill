@@ -1,0 +1,17 @@
+﻿.pillow-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.pillow-card {
+    background-color: $card-color;
+    color: #333;
+    margin: 5px auto;
+    padding: 3px;
+    width: 30%;
+
+    &:hover {
+        background-color: $hover-highlight;
+    }
+}

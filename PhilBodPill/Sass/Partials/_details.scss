@@ -1,0 +1,14 @@
+﻿.product-details-area {
+    display: flex;
+    flex-direction: row;
+
+    div {
+        margin: 5px auto;
+        width: 30%;
+    }
+}
+
+.order-section {
+    border: 1px black solid;
+    width: 100%;
+}

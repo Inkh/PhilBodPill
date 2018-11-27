@@ -1,0 +1,7 @@
+﻿@model List<PhilBodPill.Models.Basket>
+
+@foreach (var item in Model)
+{
+    <p>@item.Product.Name</p>
+    <p>@item.Quantity</p>
+}
