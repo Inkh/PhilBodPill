@@ -23,7 +23,7 @@
     </div>
 
     <div>
-        <div class="order-section">
+        <section class="order-section">
             @if (SignInManager.IsSignedIn(User))
             {
                 @if (User.IsInRole(UserRoles.Admin))
@@ -34,8 +34,8 @@
                     </div>
                 }
             }
-        </div>
-        <div class="order-section">
+        </section>
+        <section class="order-section">
             <h2>Order @Model.Name Pillows!</h2>
             @if (SignInManager.IsSignedIn(User))
             {
@@ -58,10 +58,7 @@
             {
                 <h3>You must be signed in to order!</h3>
             }
-            <div>
-                <a asp-action="Index">Back to List</a>
-            </div>
-        </div>
+        </section>
 
     </div>
 </div>

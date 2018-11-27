@@ -7,15 +7,17 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "_Layout";
+    ViewData["Heading"] = "Currently In Cart";
 }
 
-<h2>Currently In Cart</h2>
 @if (SignInManager.IsSignedIn(User))
 {
     string uid = User.Claims.First(id => id.Type == "userID").Value;
-    <div class="pillow-cards">
-        @await Component.InvokeAsync("CartFullDetail", uid);
-    </div>
+    string linkPath = $"/Basket/Checkout?uid={uid}";
+    <a asp-action="Checkout">Proceed to Checkout</a>
+
+    @await Component.InvokeAsync("CartFullDetail", uid);
+
 }
 else
 {
