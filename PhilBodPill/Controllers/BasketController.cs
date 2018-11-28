@@ -56,25 +56,6 @@ namespace PhilBodPill.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // GET: Baskets/Delete/5
-        // Removes a basket item from cart.
-        //public async Task<IActionResult> Delete(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var basket = await _basket.GetOneBasket(id);
-
-        //    if (basket == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return View(basket);
-        //}
-
         // POST: Basket/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -82,6 +63,12 @@ namespace PhilBodPill.Controllers
         {
             await _basket.DeleteBasket(id);
             return RedirectToAction(nameof(Index));
+        }
+
+        // GET: Basket/Checkout
+        public IActionResult Checkout()
+        {
+            return View();
         }
 
         //Checks for existence
