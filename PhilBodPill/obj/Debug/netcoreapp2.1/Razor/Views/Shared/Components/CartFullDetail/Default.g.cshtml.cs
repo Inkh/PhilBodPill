@@ -121,7 +121,7 @@ WriteAttributeValue("", 530, imagePath, 530, 10, false);
             WriteLiteral("</h5>\r\n            </div>\r\n            <div>\r\n                ");
             EndContext();
             BeginContext(715, 64, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5b783997b09d4b09b66ae037c82efffd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d250e97c9dbb4ec3b69df7d24d3d1168", async() => {
                 BeginContext(760, 15, true);
                 WriteLiteral("Update Quantity");
                 EndContext();
@@ -156,7 +156,7 @@ WriteAttributeValue("", 530, imagePath, 530, 10, false);
             WriteLiteral("\r\n                ");
             EndContext();
             BeginContext(797, 159, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8726981c80bd425eba867a544a6c7039", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e5499ee2a6144f9af6b18f2d82631c9", async() => {
                 BeginContext(861, 88, true);
                 WriteLiteral("\r\n                    <input type=\"submit\" value=\"Remove From Cart\" />\r\n                ");
                 EndContext();

@@ -14,7 +14,7 @@
 {
     string uid = User.Claims.First(id => id.Type == "userID").Value;
     string linkPath = $"/Basket/Checkout?uid={uid}";
-    <a asp-action="Checkout">Proceed to Checkout</a>
+    <a asp-action="Order" asp-route-id="uid">Proceed to Checkout</a>
 
     @await Component.InvokeAsync("CartFullDetail", uid);
 

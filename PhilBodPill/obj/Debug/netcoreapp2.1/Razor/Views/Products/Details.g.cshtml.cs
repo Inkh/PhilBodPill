@@ -132,7 +132,7 @@ WriteAttributeValue("", 430, imagePath, 430, 10, false);
             WriteLiteral("                    <h2>Admin Controlls</h2>\r\n                    <div class=\"fancy-button\">\r\n                        ");
             EndContext();
             BeginContext(888, 54, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1e5414a3ab674a4686ee20a46df2055a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "250aaffa5e0a432d9e4f76faa6df15f1", async() => {
                 BeginContext(934, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -212,7 +212,7 @@ WriteAttributeValue("", 430, imagePath, 430, 10, false);
             WriteLiteral("                    ");
             EndContext();
             BeginContext(1452, 490, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1e32b7adbcc8429c9e72a9f8e3098756", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "452ea6feaa714b048c1a715478337d68", async() => {
                 BeginContext(1498, 60, true);
                 WriteLiteral("\r\n                        <input type=\"hidden\" name=\"UserID\"");
                 EndContext();

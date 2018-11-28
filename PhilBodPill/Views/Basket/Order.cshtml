@@ -1,0 +1,22 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using PhilBodPill.Models;
+
+@inject SignInManager<User> SignInManager
+
+@model List<PhilBodPill.Models.Basket>
+
+@{
+    ViewData["Title"] = "Checkout";
+    ViewData["Heading"] = "Order Confirmation";
+    Layout = "_Layout";
+}
+
+@if (SignInManager.IsSignedIn(User))
+{
+    string address = User.Claims.First(x => x.Type == "userAddress").Value;
+    string uid = User.Claims.First(id => id.Type == "userID").Value;
+    <h2> The products below will be mailed to the following address... </h2>
+    <p>@address</p>
+    <a asp-action="Checkout">Confirm Order</a>
+    @await Component.InvokeAsync("CartFullDetail", uid);
+}

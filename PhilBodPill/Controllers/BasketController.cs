@@ -65,6 +65,12 @@ namespace PhilBodPill.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        // GET: Basket/Order
+        public IActionResult Order()
+        {
+            return View();
+        }
+
         // GET: Basket/Checkout
         public IActionResult Checkout()
         {

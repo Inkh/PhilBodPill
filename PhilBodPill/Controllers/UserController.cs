@@ -85,11 +85,16 @@ namespace PhilBodPill.Controllers
                     }
                     Claim firstNameLower = new Claim("firstNameLower", user.FirstName.ToLower());
                     Claim userID = new Claim("userID", user.Id);
+                    Claim userAddress = new Claim("userAddress", $"{user.FirstName} {user.LastName}\n" +
+                        $"{user.UserStreet}\n {user.City} {user.UserState}, {user.UserZip}");
+                    Claim userEmail = new Claim("userEmail", user.UserEmail);
                     List<Claim> myClaims = new List<Claim>()
                     {
                         greeting,
                         firstNameLower,
-                        userID
+                        userID,
+                        userAddress,
+                        userEmail
                     };
 
                     List<string> adminList = new List<string> { "nethwebdev@gmail.com", "admin@admin.com", "amanda@codefellows.com" };
