@@ -45,13 +45,13 @@ namespace PhilBodPill
             });
 
             services.AddDbContext<UserDbContext>(options =>
-            //options.UseSqlServer(Configuration["ConnectionStrings:IdentityConnection"])
+            //options.UseSqlServer(Configuration["ConnectionStrings:IdentityProductionConnection"])
             options.UseSqlServer(Configuration["ConnectionStrings:IdentityConnection"])
             );
 
             services.AddDbContext<PhilBodPillDbContext>(options =>
-            //options.UseSqlServer(Configuration["ConnectionStrings:ProductionDb"])
-            options.UseSqlServer(Configuration["ConnectionStrings:ProductionDB"])
+            options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"])
+            //options.UseSqlServer(Configuration["ConnectionStrings:ProductionDB"])
             );
 
             services.AddAuthorization(options =>

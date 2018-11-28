@@ -14,6 +14,12 @@
 @if (SignInManager.IsSignedIn(User))
 {
     string uid = User.Claims.First(id => id.Type == "userID").Value;
+    string email = User.Claims.First(x => x.Type == "userEmail").Value;
+    object userData = new
+    {
+        uid = uid,
+        email = email
+    };
 
     <h3>Well Done! You are now the proud owner some sweet philosopher body pillows.</h3>
     <h5>You'll never be lonely again.</h5>
@@ -37,6 +43,6 @@
                 </td>
             </tr>
         </thead>
-        @await Component.InvokeAsync("Receipt", uid)
+        @await Component.InvokeAsync("Receipt", userData)
     </table>
 }
