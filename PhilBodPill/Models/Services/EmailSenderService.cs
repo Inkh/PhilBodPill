@@ -20,7 +20,7 @@ namespace PhilBodPill.Models
 
         public async Task SendEmailAsync(string email, string subject, string htmlMessage)
         {
-            var client = new SendGridClient(Configuration["API_Key:SendGrid_API_Key"]);
+            var client = new SendGridClient(Configuration["SendGrid_API_Key"]);
 
             var msg = new SendGridMessage();
 
