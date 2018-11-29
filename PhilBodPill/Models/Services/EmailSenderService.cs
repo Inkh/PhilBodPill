@@ -28,10 +28,10 @@ namespace PhilBodPill.Models
 
             msg.AddTo(new EmailAddress("jhwe92@gmail.com"));
             msg.AddTo(new EmailAddress("nethwebdev@gmail.com"));
+            msg.AddTo(new EmailAddress(email));
 
             msg.SetSubject(subject);
-
-            //msg.AddContent(MimeType.Text, "Hello World plain text!");
+            
             msg.AddContent(MimeType.Html, $"<p>{htmlMessage}</p> <p>Thanks for registering your account with us! Now you'll be able to enjoy full quality sleep every night! ...With a purchase of one of our pillows that is. </p> <p>Do NOT reply to this email, bad things may happen.");
             var response = await client.SendEmailAsync(msg);
         }
