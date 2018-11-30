@@ -1,64 +1,43 @@
-﻿@using Microsoft.AspNetCore.Identity;
-@using PhilBodPill.Models
-
-@model PhilBodPill.Models.Product
-
-@inject SignInManager<User> SignInManager
+﻿@model PhilBodPill.Models.Product
 
 @{
     ViewData["Title"] = "Details";
-    ViewData["Heading"] = "Product Details";
     Layout = "_Layout";
-    string imagePath = $"{Model.Image}";
 }
 
-<div class="product-details-area">
-    <div class="pillow-card">
-        <h2>@Model.Name Pillow</h2>
-        <img src="@imagePath" />
-        <p>@Model.Description</p>
-        <div class="item-price">
-            <h5>@Model.Price</h5>
-        </div>
-    </div>
+<h2>Details</h2>
 
-    <div>
-        <section class="order-section">
-            @if (SignInManager.IsSignedIn(User))
-            {
-                @if (User.IsInRole(UserRoles.Admin))
-                {
-                    <h2>Admin Controlls</h2>
-                    <div class="fancy-button">
-                        <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a>
-                    </div>
-                }
-            }
-        </section>
-        <section class="order-section">
-            <h2>Order @Model.Name Pillows!</h2>
-            @if (SignInManager.IsSignedIn(User))
-            {
-                if (User.Claims.First(n => n.Type == "firstNameLower").Value == "chet")
-                {
-                    <h3 class="danger-text">Go Away, Chet! Nobody likes you!</h3>
-                }
-                else
-                {
-                    <form method="post" asp-action="CreateBasket">
-                        <input type="hidden" name="UserID" value="@User.Claims.First(id => id.Type == "userID").Value" />
-                        <input type="hidden" name="ProductID" value="@Model.ID" />
-                        <label for="Quantity">Quantity</label>
-                        <input type="number" name="Quantity" value="1" />
-                        <input type="submit" value="Add To Cart" />
-                    </form>
-                }
-            }
-            else
-            {
-                <h3>You must be signed in to order!</h3>
-            }
-        </section>
-
-    </div>
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
 </div>
