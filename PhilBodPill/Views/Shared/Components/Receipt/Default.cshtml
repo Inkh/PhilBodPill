@@ -1,0 +1,36 @@
+﻿@model List<PhilBodPill.Models.Basket>
+
+<tbody>
+    @{ decimal total = 0; }
+    @foreach (var item in Model)
+    {
+        decimal subtotal = item.Product.Price * (decimal)item.Quantity;
+        total += subtotal;
+        <tr>
+            <td>
+                @item.Product.Name
+            </td>
+            <td>
+                @item.Product.Price
+            </td>
+            <td>
+                @item.Quantity
+            </td>
+            <td>
+                @subtotal
+            </td>
+        </tr>
+    }
+</tbody>
+<tfoot>
+    <tr>
+        <td>
+            Total
+        </td>
+        <td></td>
+        <td></td>
+        <td>
+            @total
+        </td>
+    </tr>
+</tfoot>
