@@ -79,3 +79,4 @@ C:\Users\nethw\Code\401\PhilBodPill\PhilBodPill\obj\Debug\netcoreapp2.1\Razor\Vi
 C:\Users\nethw\Code\401\PhilBodPill\PhilBodPill\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\CartFullDetail\Default.g.cshtml.cs
 C:\Users\nethw\Code\401\PhilBodPill\PhilBodPill\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\Cart\Default.g.cshtml.cs
 C:\Users\nethw\Code\401\PhilBodPill\PhilBodPill\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\Receipt\Default.g.cshtml.cs
+C:\Users\nethw\Code\401\PhilBodPill\PhilBodPill\obj\Debug\netcoreapp2.1\Razor\Pages\AdminDash.g.cshtml.cs
