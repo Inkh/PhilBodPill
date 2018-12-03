@@ -9104,23 +9104,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nethw\\.nuget\\packages\\": {},
+    "C:\\Users\\Jeff\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nethw\\Code\\401\\PhilBodPill\\PhilBodPillTests\\PhilBodPillTests.csproj",
+      "projectUniqueName": "C:\\Users\\Jeff\\source\\repos\\PhilosopherBodyPillow\\PhilBodPillTests\\PhilBodPillTests.csproj",
       "projectName": "PhilBodPillTests",
-      "projectPath": "C:\\Users\\nethw\\Code\\401\\PhilBodPill\\PhilBodPillTests\\PhilBodPillTests.csproj",
-      "packagesPath": "C:\\Users\\nethw\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nethw\\Code\\401\\PhilBodPill\\PhilBodPillTests\\obj\\",
+      "projectPath": "C:\\Users\\Jeff\\source\\repos\\PhilosopherBodyPillow\\PhilBodPillTests\\PhilBodPillTests.csproj",
+      "packagesPath": "C:\\Users\\Jeff\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jeff\\source\\repos\\PhilosopherBodyPillow\\PhilBodPillTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\nethw\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jeff\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9133,8 +9133,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\nethw\\Code\\401\\PhilBodPill\\PhilBodPill\\PhilBodPill.csproj": {
-              "projectPath": "C:\\Users\\nethw\\Code\\401\\PhilBodPill\\PhilBodPill\\PhilBodPill.csproj"
+            "C:\\Users\\Jeff\\source\\repos\\PhilosopherBodyPillow\\PhilBodPill\\PhilBodPill.csproj": {
+              "projectPath": "C:\\Users\\Jeff\\source\\repos\\PhilosopherBodyPillow\\PhilBodPill\\PhilBodPill.csproj"
             }
           }
         }
