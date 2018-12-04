@@ -17,6 +17,13 @@
     string uid = User.Claims.First(id => id.Type == "userID").Value;
     <h2> The products below will be mailed to the following address... </h2>
     <p>@address</p>
+    <h4>Payment Options</h4>
+    <h4>Note, this is not a real thing. Don't put actual credit card info anywhere on this site, ya doink!</h4>
+    <select>
+        <option>Fake Credit Card Number 1</option>
+        <option>Fake Credit Card Number 2</option>
+        <option>Seriously, why is this even here?</option>
+    </select>
     <a asp-action="Checkout">Confirm Order</a>
     @await Component.InvokeAsync("CartFullDetail", uid);
 }
