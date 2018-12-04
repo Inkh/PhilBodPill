@@ -1,0 +1,49 @@
+﻿@page
+@model PhilBodPill.Pages.ProductManagement.ListProductsModel
+@{
+    ViewData["Title"] = "List Products";
+    ViewData["Heading"] = "Product List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table>
+    <thead>
+        <tr>
+            <td>
+                Name
+            </td>
+            <td>
+                Price
+            </td>
+            <td>
+                Description
+            </td>
+            <td>
+                Options
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Products)
+        {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Price
+            </td>
+            <td>
+                @item.Description
+            </td>
+            <td>
+                <button>Edit</button><button>Delete</button>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-page="/AdminDash">Back to List</a>
+</div>
+

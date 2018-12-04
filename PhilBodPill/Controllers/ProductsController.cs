@@ -48,26 +48,26 @@ namespace PhilBodPill.Controllers
         }
 
         // GET: Products/Create
-        [Authorize(Policy = "AdminOnly")]
-        public IActionResult Create()
-        {
-            return View();
-        }
+        //[Authorize(Policy = "AdminOnly")]
+        //public IActionResult Create()
+        //{
+        //    return View();
+        //}
 
         // POST: Products/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,Image,Price,Description")]Product product)
-        {
-            if (ModelState.IsValid)
-            {
-                await _inventory.CreateProduct(product);
-                return RedirectToAction(nameof(Index));
-            }
-            return View(product);
-        }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Create([Bind("ID,Name,Image,Price,Description")]Product product)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        await _inventory.CreateProduct(product);
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    return View(product);
+        //}
 
         // GET: Products/Edit/5
         [Authorize(Policy = "AdminOnly")]
