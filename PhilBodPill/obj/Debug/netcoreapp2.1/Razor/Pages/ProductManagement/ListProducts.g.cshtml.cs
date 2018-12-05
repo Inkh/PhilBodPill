@@ -115,7 +115,7 @@ namespace AspNetCore
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(844, 79, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "758c0810f82942c9afc8b86715fbeceb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "50868442a1c540f88223a2bf71b8d168", async() => {
                 BeginContext(915, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -150,7 +150,7 @@ namespace AspNetCore
             WriteLiteral("\r\n                ");
             EndContext();
             BeginContext(941, 171, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a063e57801414127ab27daf1762952e3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fa5869a2a3404416b16a80799f0c0e88", async() => {
                 BeginContext(1028, 77, true);
                 WriteLiteral("\r\n                    <button type=\"submit\">Delete</button>\r\n                ");
                 EndContext();
@@ -197,7 +197,7 @@ namespace AspNetCore
             WriteLiteral("    </tbody>\r\n</table>\r\n<div>\r\n    ");
             EndContext();
             BeginContext(1194, 41, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eda08cddd0c84b558fcb3a7343adebb4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "118c1787bf154c2c90e9ca29000b7df6", async() => {
                 BeginContext(1219, 12, true);
                 WriteLiteral("Back to List");
                 EndContext();
