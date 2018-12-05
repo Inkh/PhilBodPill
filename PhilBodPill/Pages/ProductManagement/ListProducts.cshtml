@@ -37,7 +37,7 @@
                 @item.Description
             </td>
             <td>
-                <button>Edit</button><button>Delete</button>
+                <a asp-page="/ProductManagement/UpdateProduct" asp-route-id="@item.ID">Edit</a><button>Delete</button>
             </td>
         </tr>
         }

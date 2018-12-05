@@ -11,11 +11,11 @@ using PhilBodPill.Models.Interfaces;
 namespace PhilBodPill.Pages.ProductManagement
 {
     [Authorize(Policy = "AdminOnly")]
-    public class CreateProductModel : PageModel
+    public class UpdateProductModel : PageModel
     {
         private IInventory _inventory;
 
-        public CreateProductModel(IInventory inventory)
+        public UpdateProductModel(IInventory inventory)
         {
             _inventory = inventory;
         }
@@ -23,19 +23,19 @@ namespace PhilBodPill.Pages.ProductManagement
         [BindProperty]
         public PhilBodPill.Models.Product Product { get; set; }
 
-        public IActionResult OnGet()
+        public async Task OnGet(int id)
         {
-            return Page();
+            Product = await _inventory.GetProduct(id);
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            await _inventory.CreateProduct(Product);
+            await _inventory.UpdateProduct(Product);
 
             return RedirectToPage("./AdminDash");
         }
