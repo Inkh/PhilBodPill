@@ -26,5 +26,11 @@ namespace PhilBodPill.Pages.ProductManagement
         {
             Products = await _inventory.GetProducts();
         }
+
+        public async Task OnPostAsync(int id)
+        {
+            await _inventory.DeleteProduct(id);
+            Products = await _inventory.GetProducts();
+        }
     }
 }
