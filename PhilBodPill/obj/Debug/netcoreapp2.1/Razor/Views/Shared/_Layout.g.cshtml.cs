@@ -66,7 +66,7 @@ using PhilBodPill.Models;
             WriteLiteral("<!DOCTYPE html>\n\n<html>\n");
             EndContext();
             BeginContext(131, 174, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "516d1108c6704708b4819060cd6a49c3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1892a821679641088735c41bd6e71965", async() => {
                 BeginContext(137, 70, true);
                 WriteLiteral("\n    <meta name=\"viewport\" content=\"width=device-width\" />\n    <title>");
                 EndContext();
@@ -81,7 +81,7 @@ using PhilBodPill.Models;
                 WriteLiteral("</title>\n    ");
                 EndContext();
                 BeginContext(234, 63, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "8e6a291053b14dff9e6c2790c585a71d", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "0e476782a5b04ec6ab93ef62a33925a7", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -116,7 +116,7 @@ using PhilBodPill.Models;
             WriteLiteral("\n");
             EndContext();
             BeginContext(306, 1617, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "864a2a7d560a473286e5cfd99667ab38", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "82a22ec771194f7dae736a2c241256b4", async() => {
                 BeginContext(312, 42, true);
                 WriteLiteral("\n    <nav>\n        <ul class=\"nav-items\">\n");
                 EndContext();
@@ -140,7 +140,7 @@ using PhilBodPill.Models;
                 WriteLiteral("\n            </li>\n            <li>\n                ");
                 EndContext();
                 BeginContext(559, 166, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a50f8f97283d424dbab4ce75503370d2", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "265609a41e304195934c0b36f8e5dea7", async() => {
                     BeginContext(621, 97, true);
                     WriteLiteral("\n                    <input class=\"fancy-button\" type=\"submit\" value=\"Logout\" />\n                ");
                     EndContext();

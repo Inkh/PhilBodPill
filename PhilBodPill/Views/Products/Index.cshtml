@@ -10,14 +10,6 @@
     Layout = "_Layout";
 }
 
-@if (SignInManager.IsSignedIn(User))
-{
-    if (User.IsInRole(UserRoles.Admin))
-    {
-        <a class="fancy-button" Create">Create New</a>
-    }
-}
-
 <div class="pillow-cards">
     @foreach (var item in Model)
     {
