@@ -9,6 +9,8 @@ namespace PhilBodPill.Models
     {
         public int ID { get; set; }
         public int userID { get; set; }
+        public int totalPrice { get; set; }
+        public DateTime date { get; set; }
 
         public List<Basket> Baskets { get; set; }
     }

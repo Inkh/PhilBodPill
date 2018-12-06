@@ -93,7 +93,7 @@ using PhilBodPill.Models;
             WriteLiteral("</p>\r\n    <h4>Payment Options</h4>\r\n    <h4>Note, this is not a real thing. Don\'t put actual credit card info anywhere on this site, ya doink!</h4>\r\n    <select>\r\n        ");
             EndContext();
             BeginContext(728, 42, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5095b60545b249099817e51b112bf3c2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d0eec95b0b2e491fa13d5cdfffc42f42", async() => {
                 BeginContext(736, 25, true);
                 WriteLiteral("Fake Credit Card Number 1");
                 EndContext();
@@ -113,7 +113,7 @@ using PhilBodPill.Models;
             WriteLiteral("\r\n        ");
             EndContext();
             BeginContext(780, 42, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "73eb68ae82fc480e91e901a13722625c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "95014cebd0c04db783e0b5b4e6ebbfdb", async() => {
                 BeginContext(788, 25, true);
                 WriteLiteral("Fake Credit Card Number 2");
                 EndContext();
@@ -133,7 +133,7 @@ using PhilBodPill.Models;
             WriteLiteral("\r\n        ");
             EndContext();
             BeginContext(832, 50, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "943569cdda5b45cb875c836b10f5addc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9ea8141427748b4888caaac72e33fd2", async() => {
                 BeginContext(840, 33, true);
                 WriteLiteral("Seriously, why is this even here?");
                 EndContext();
@@ -153,7 +153,7 @@ using PhilBodPill.Models;
             WriteLiteral("\r\n    </select>\r\n    ");
             EndContext();
             BeginContext(903, 42, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aa6d7eaef8ea45ee848ed067fb80ca51", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cf83e0436ec044a994aa73b712c3716d", async() => {
                 BeginContext(928, 13, true);
                 WriteLiteral("Confirm Order");
                 EndContext();
