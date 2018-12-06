@@ -26,6 +26,5 @@
 
     <h4>Your Shipping Address</h4>
     <p>@User.Claims.First(name => name.Type == "userAddress").Value</p>
-    <a asp-page="EditDetails">Change your password</a>
 }
 
