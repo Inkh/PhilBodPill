@@ -169,10 +169,6 @@ namespace PhilBodPill.Controllers
             return View();
         }
 
-        public IActionResult EditUser(string id)
-        {
-            return View();
-        }
         public void CheckUserRolesExist()
         {
             if (!_context.Roles.Any())
