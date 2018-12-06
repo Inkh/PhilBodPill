@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PhilBodPill.Data;
 
 namespace PhilBodPill.Migrations.PhilBodPillDb
 {
     [DbContext(typeof(PhilBodPillDbContext))]
-    partial class PhilBodPillDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181206200021_updateOrderTable")]
+    partial class updateOrderTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,7 +52,7 @@ namespace PhilBodPill.Migrations.PhilBodPillDb
 
                     b.Property<DateTime>("Date");
 
-                    b.Property<decimal>("TotalPrice");
+                    b.Property<int>("TotalPrice");
 
                     b.Property<string>("UserID");
 

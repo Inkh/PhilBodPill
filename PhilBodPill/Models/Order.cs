@@ -8,9 +8,9 @@ namespace PhilBodPill.Models
     public class Order
     {
         public int ID { get; set; }
-        public int userID { get; set; }
-        public int totalPrice { get; set; }
-        public DateTime date { get; set; }
+        public string UserID { get; set; }
+        public decimal TotalPrice { get; set; }
+        public DateTime Date { get; set; }
 
         public List<Basket> Baskets { get; set; }
     }

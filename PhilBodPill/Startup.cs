@@ -63,6 +63,7 @@ namespace PhilBodPill
             services.AddScoped<IInventory, ProductService>();
             services.AddScoped<IBasket, BasketService>();
             services.AddScoped<IEmailSender, EmailSenderService>();
+            services.AddScoped<IOrder, OrderService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
