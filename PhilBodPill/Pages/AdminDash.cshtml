@@ -21,6 +21,22 @@
             <li><a asp-page="/ProductManagement/CreateProduct">Add A New Product</a></li>
             <li><a asp-page="/ProductManagement/ListProducts">Edit/Delete Products</a></li>
         </ul>
+
+        <h4>Recent Orders</h4>
+        @if (Model.Orders.Count() == 0)
+        {
+            <p>There are no orders to display.</p>
+        }
+        else
+        {
+            <ul>
+                @foreach (var item in Model.Orders)
+                {
+                    @await Component.InvokeAsync("OrderListItem", item)
+                }
+            </ul>
+        }
+
     }
     else
     {
