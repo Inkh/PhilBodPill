@@ -23,7 +23,7 @@
     </div>
 
     <div>
-        <section class="order-section">
+        @*<section class="order-section">
             @if (SignInManager.IsSignedIn(User))
             {
                 @if (User.IsInRole(UserRoles.Admin))
@@ -34,7 +34,7 @@
                     </div>
                 }
             }
-        </section>
+        </section>*@
         <section class="order-section">
             <h2>Order @Model.Name Pillows!</h2>
             @if (SignInManager.IsSignedIn(User))
