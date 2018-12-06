@@ -123,6 +123,7 @@ namespace PhilBodPill.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel lvm, string returnUrl = null)
         {
@@ -168,6 +169,10 @@ namespace PhilBodPill.Controllers
             return View();
         }
 
+        public IActionResult EditUser(string id)
+        {
+            return View();
+        }
         public void CheckUserRolesExist()
         {
             if (!_context.Roles.Any())
