@@ -101,5 +101,6 @@ namespace PhilBodPill.Data
         }
         public DbSet<Product> Product { get; set; }
         public DbSet<Basket> Basket { get; set; }
+        public DbSet<Order> Orders { get; set; }
     }
 }
