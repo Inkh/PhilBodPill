@@ -91,4 +91,4 @@ C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Debug\netcoreap
 C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\Cart\Default.g.cshtml.cs
 C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\Receipt\Default.g.cshtml.cs
 C:\Users\nethw\Code\401\PhilBodPill\PhilBodPill\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\OrderListItem\Default.g.cshtml.cs
-C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\OrderListItem\Default.g.cshtml.cs
+C:\Users\nethw\Code\401\PhilBodPill\PhilBodPill\obj\Debug\netcoreapp2.1\Razor\Pages\UserDash.g.cshtml.cs
