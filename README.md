@@ -1,6 +1,6 @@
 # Philosopher Body Pillow
 
-A ~~joke~~ ecommerce website that will be built out over the course of the next few weeks using .NET Core.
+A ~~joke~~ ecommerce website built using .NET Core.
 
 Deployed Site:
 
@@ -32,6 +32,12 @@ Right now we have an Admin policy and Name maching policy (NoChetsAllowed). The 
 
 Name maching policy is also implemented to lock away inappropriate names in the future.
 
+
+## Vulnerability Report
+
+Click [here](vulnerability-report.md) for a list of vulnerability reports.
+
 ## Collaborators
 
 Neth Horn and Jeff Weng
+

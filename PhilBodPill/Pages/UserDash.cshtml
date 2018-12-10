@@ -1,0 +1,44 @@
+﻿@page
+
+@using Microsoft.AspNetCore.Identity;
+@using PhilBodPill.Models
+
+@inject SignInManager<User> SignInManager
+
+@model PhilBodPill.Pages.UserDashModel
+
+@{
+    ViewData["Title"] = "UserDash";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <h2> @User.Claims.First(name => name.Type == "greeting").Value </h2>
+
+    <h3> Your Recent Orders </h3>
+    <ul>
+        @foreach (var item in Model.Orders)
+        {
+            <li>@item.Date : $@item.TotalPrice</li>
+        }
+    </ul>
+    <ul>
+        <li>
+            First Name: @Html.DisplayFor(model => model.CurrentUser.FirstName)
+        </li>
+        <li>
+            Last Name: @Html.DisplayFor(model => model.CurrentUser.LastName)
+        </li>
+        <li>
+            Email: @Html.DisplayFor(model => model.CurrentUser.UserEmail)
+        </li>
+        <li>
+        </li>
+    </ul>
+
+    <h4>Your Shipping Address</h4>
+    <p>@User.Claims.First(name => name.Type == "userAddress").Value</p>
+    <a asp-page="/UserManagement/UpdatePassword">Update Password</a>
+}
+

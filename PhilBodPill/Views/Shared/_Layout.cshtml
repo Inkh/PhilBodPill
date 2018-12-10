@@ -23,6 +23,9 @@
                     <input class="fancy-button" type="submit" value="Logout" />
                 </form>
             </li>
+            <li>
+                <a asp-page="/UserDash">My Profile</a>
+            </li>
             }
             else
             {
@@ -35,6 +38,9 @@
             }
             <li>
             @Html.ActionLink("Our Products", "Index", "Products")
+            </li>
+            <li>
+                <a asp-page="/AdminDash">Admin Dashboard</a>
             </li>
         </ul>
         
