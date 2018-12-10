@@ -45,7 +45,7 @@ namespace PhilBodPill.Pages.UserManagement
             
             var user = await _userManager.GetUserAsync(User);
             var changePassword = await _userManager.ChangePasswordAsync(user, UpdatePasswordViewModel.CurrentPassword, UpdatePasswordViewModel.UpdatedPassword);
-            return RedirectToPage();
+            return RedirectToPage("/UserDash");
         }
     }
 }

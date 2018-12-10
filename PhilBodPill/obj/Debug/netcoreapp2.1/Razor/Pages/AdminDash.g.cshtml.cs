@@ -94,7 +94,7 @@ using PhilBodPill.Models;
             WriteLiteral("        <ul class=\"admin-menu\">\r\n            <li>");
             EndContext();
             BeginContext(520, 68, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "02fb2f31b7e6445f9b495eced7a29ed2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9533d1f5c5244de89938300d15243d45", async() => {
                 BeginContext(567, 17, true);
                 WriteLiteral("Add A New Product");
                 EndContext();
@@ -116,7 +116,7 @@ using PhilBodPill.Models;
             WriteLiteral("</li>\r\n            <li>");
             EndContext();
             BeginContext(611, 70, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "41c003d615b9461e84322078fe0e1f0d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "49396181fa624154a7a72c5299c61b56", async() => {
                 BeginContext(657, 20, true);
                 WriteLiteral("Edit/Delete Products");
                 EndContext();
