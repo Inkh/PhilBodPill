@@ -6,23 +6,45 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PhilBodPill.Models;
+using PhilBodPill.Models.ViewModels;
 
 namespace PhilBodPill.Pages.UserManagement
 {
     public class UpdatePasswordModel : PageModel
     {
         private SignInManager<User> _signInManager;
+        private UserManager<User> _userManager;
 
-        public UpdatePasswordModel(SignInManager<User> signInManager)
+        [BindProperty]
+        public User AppUser { get; set; }
+        public UpdatePasswordViewModel UpdatePasswordViewModel { get; set; }
+
+        public UpdatePasswordModel(SignInManager<User> signInManager, UserManager<User> userManager)
         {
             _signInManager = signInManager;
-        }
-        [BindProperty]
-        public PhilBodPill.Models.User User { get; set; }
+            _userManager = userManager;
 
-        public void OnGet(string id)
+        }
+
+        public async Task<IActionResult> OnGet()
         {
-            User = await user.
+            AppUser = await _userManager.GetUserAsync(HttpContext.User);
+            if (AppUser == null)
+            {
+                return NotFound();
+            }
+            return Page();
+
+        }
+
+        public async Task<IActionResult> OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            User UpdatedUser = await _userManager.GetUserAsync(HttpContext.User);
+            return Page();
         }
     }
 }

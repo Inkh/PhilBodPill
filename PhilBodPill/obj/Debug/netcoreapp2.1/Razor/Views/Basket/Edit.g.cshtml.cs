@@ -58,12 +58,12 @@ namespace AspNetCore
             WriteLiteral("\r\n<h2>Update Quantity</h2>\r\n\r\n");
             EndContext();
             BeginContext(132, 202, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3dda75633a1a4c0f8917d3b28cdffaa5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "da02c14907b044f9bf750d2fce7f478d", async() => {
                 BeginContext(170, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(176, 36, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "93c169c3e23345109f7a98ef50054812", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "55afb16f0b2c42d5819c91b774dcc3cd", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
