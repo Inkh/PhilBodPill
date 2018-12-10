@@ -27,7 +27,7 @@ namespace PhilBodPill.Models
             msg.SetFrom("nethwebdev@gmail.com", "Philospher Body Pillow Team");
 
             msg.AddTo(new EmailAddress("jhwe92@gmail.com"));
-            msg.AddTo(new EmailAddress("nethwebdev@gmail.com"));
+            //msg.AddTo(new EmailAddress("nethwebdev@gmail.com"));
             msg.AddTo(new EmailAddress(email));
 
             msg.SetSubject(subject);

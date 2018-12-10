@@ -16,11 +16,14 @@ namespace PhilBodPill.Pages
     {
         private IOrder _order;
         private SignInManager<User> _signInManager;
+        private UserManager<User> _userManager { get; set; }
+        public User CurrentUser { get; set; }
 
-        public UserDashModel(IOrder order, SignInManager<User> signInManager)
+        public UserDashModel(IOrder order, SignInManager<User> signInManager, UserManager<User> userManager)
         {
             _order = order;
             _signInManager = signInManager;
+            _userManager = userManager;
         }
 
         [BindProperty]
@@ -33,6 +36,7 @@ namespace PhilBodPill.Pages
                 string id = User.Claims.First(name => name.Type == "userID").Value;
                 Orders = await _order.GetOrdersByUser(id);
             }
+            CurrentUser = await _userManager.GetUserAsync(HttpContext.User);
             
         }
     }
