@@ -35,6 +35,10 @@ namespace PhilBodPill.Models.Services
         /// <returns>Nothing, updates the basket in databse table</returns>
         public async Task UpdateBasket(int id, int quantity)
         {
+            if (quantity < 1)
+            {
+                quantity = 1;
+            }
             Basket basket = await GetOneBasket(id);
             basket.Quantity = quantity;
             _context.Basket.Update(basket);
