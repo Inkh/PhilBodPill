@@ -22,10 +22,7 @@ C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Release\netcore
 C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Release\netcoreapp2.1\PhilBodPill.dll
 C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Release\netcoreapp2.1\PhilBodPill.pdb
 C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Release\netcoreapp2.1\PhilBodPill.csproj.CopyComplete
-C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Release\netcoreapp2.1\Razor\Views\Products\Create.g.cshtml.cs
-C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Release\netcoreapp2.1\Razor\Views\Products\Delete.g.cshtml.cs
 C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Release\netcoreapp2.1\Razor\Views\Products\Details.g.cshtml.cs
-C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Release\netcoreapp2.1\Razor\Views\Products\Edit.g.cshtml.cs
 C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Release\netcoreapp2.1\Razor\Views\Products\Index.g.cshtml.cs
 C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Release\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
 C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Release\netcoreapp2.1\Razor\Views\User\Register.g.cshtml.cs
@@ -42,3 +39,11 @@ C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Release\netcore
 C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Release\netcoreapp2.1\Razor\Views\Shared\Components\CartFullDetail\Default.g.cshtml.cs
 C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Release\netcoreapp2.1\Razor\Views\Shared\Components\Cart\Default.g.cshtml.cs
 C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Release\netcoreapp2.1\Razor\Views\Shared\Components\Receipt\Default.g.cshtml.cs
+C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Release\netcoreapp2.1\Razor\Pages\AdminDash.g.cshtml.cs
+C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Release\netcoreapp2.1\Razor\Pages\ProductManagement\CreateProduct.g.cshtml.cs
+C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Release\netcoreapp2.1\Razor\Pages\ProductManagement\ListProducts.g.cshtml.cs
+C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Release\netcoreapp2.1\Razor\Pages\ProductManagement\UpdateProduct.g.cshtml.cs
+C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Release\netcoreapp2.1\Razor\Pages\UserDash.g.cshtml.cs
+C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Release\netcoreapp2.1\Razor\Pages\UserManagement\UpdatePassword.g.cshtml.cs
+C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Release\netcoreapp2.1\Razor\Pages\_ViewImports.g.cshtml.cs
+C:\Users\Jeff\source\repos\PhilosopherBodyPillow\PhilBodPill\obj\Release\netcoreapp2.1\Razor\Views\Shared\Components\OrderListItem\Default.g.cshtml.cs
