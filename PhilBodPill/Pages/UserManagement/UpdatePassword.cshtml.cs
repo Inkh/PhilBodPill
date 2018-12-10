@@ -16,23 +16,22 @@ namespace PhilBodPill.Pages.UserManagement
         private UserManager<User> _userManager;
 
         [BindProperty]
-        public User AppUser { get; set; }
         public UpdatePasswordViewModel UpdatePasswordViewModel { get; set; }
 
         public UpdatePasswordModel(SignInManager<User> signInManager, UserManager<User> userManager)
         {
             _signInManager = signInManager;
             _userManager = userManager;
-
         }
 
         public async Task<IActionResult> OnGet()
         {
-            AppUser = await _userManager.GetUserAsync(HttpContext.User);
-            if (AppUser == null)
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
             {
                 return NotFound();
             }
+            UpdatePasswordViewModel = new UpdatePasswordViewModel();
             return Page();
 
         }
@@ -43,8 +42,10 @@ namespace PhilBodPill.Pages.UserManagement
             {
                 return Page();
             }
-            User UpdatedUser = await _userManager.GetUserAsync(HttpContext.User);
-            return Page();
+            
+            var user = await _userManager.GetUserAsync(User);
+            var changePassword = await _userManager.ChangePasswordAsync(user, UpdatePasswordViewModel.CurrentPassword, UpdatePasswordViewModel.UpdatedPassword);
+            return RedirectToPage();
         }
     }
 }
